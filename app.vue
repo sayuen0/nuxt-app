@@ -1,25 +1,19 @@
 <template>
-  <div>hello world</div>
-  <button @click="increment">Increment</button>
-  <p>{{ count }}</p>
-  <button @click="decrement">Decrement</button>
+  <a href="#" @click="view('home')">Home</a>
+  <a href="#" @click="view('counter')">Counter</a>
+
+  <nuxt-page/>
+
+  <LazyHomeWelcome v-if="page==='home'"/>
+  <LazyCounter v-if="page==='counter'"/>
 </template>
 
+<script setup>
+const page = ref("home");
 
-<script>
-export default {
-  data() {
-    return {
-      count: 0,
-    };
-  },
-  methods: {
-    increment() {
-      this.count++;
-    },
-    decrement() {
-      this.count--;
-    },
-  }
-};
+
+function view(name) {
+ page.value = name;
+}
+
 </script>
