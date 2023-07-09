@@ -1,9 +1,10 @@
 <template>
-    <NuxtLink to="/">
-        Home
-    </NuxtLink>
-    <NuxtLink to="/about">
-        About
-    </NuxtLink>
     About
 </template>
+
+<script>
+// NuxtLayout のレンダリングを妨げる
+definePageMeta({
+    layout: false,
+})
+</script>

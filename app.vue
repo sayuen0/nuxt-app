@@ -1,11 +1,7 @@
 <template>
-  <a href="#" @click="view('home')">Home</a>
-  <a href="#" @click="view('counter')">Counter</a>
-
-  <nuxt-page/>
-
-  <LazyHomeWelcome v-if="page==='home'"/>
-  <LazyCounter v-if="page==='counter'"/>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script setup>
@@ -13,7 +9,7 @@ const page = ref("home");
 
 
 function view(name) {
- page.value = name;
+  page.value = name;
 }
 
 </script>
